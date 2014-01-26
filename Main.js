@@ -22,41 +22,8 @@ function draw() {
 }
 function init() {
     if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
-    _params = {
-      formula: "z = 1",
-	  spin: true,
-	  spinSpeed : Math.PI/256,
-	  displayOutline : false,
-      X: 0,
-      Y: 0,
-      Z: 1,
-      system: "spherical",
-      dependentVariableCart: "z",
-      dependentVariableSphere: "r",
-      dependentVariableCyl: "z",
-	  explode : function() { alert('called me'); },
-        color:  "#ff0000", // color (change "#" to "0x")
-        //colorA: "#000000", // color (change "#" to "0x")
-        //colorE: "#000033", // color (change "#" to "0x")
-        colorS: "#ffff00", // color (change "#" to "0x")
-        shininess: 30,
-        opacity: 1, 
-        visible: true,
-        material: "Phong",
-        draw: function () { userClickedDraw() },
-        help: function() {
-            var win=window.open('Help.html', '_blank');
-            win.focus();
-        }
-	};
-    var systemParam = getParameterByName('system');
-    if (systemParam != '') _params.system = systemParam;
-
-    var formulaParam = getParameterByName('formula');
-    if (formulaParam != '') {
-        var cleanFormula = getCleanFormula(_params.system, formulaParam);
-        if (cleanFormula != null) _params.formula = cleanFormula;
-    }
+    _params = new params();
+    _params.initFromURL();
 
 	_renderer = new THREE.WebGLRenderer();
 	_renderer.setSize( window.innerWidth, window.innerHeight );

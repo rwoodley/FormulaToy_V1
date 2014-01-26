@@ -1,17 +1,11 @@
-- make equations URL addressable
+- get dismiss button working on sharing screen
+- save 'distance from origin' in params too
 - make animated gif
 - allow camera to spin different ways
-- simplify language: pre-canned functions. no var or ';' required.
 - help pages
-- on and off floor
-- undo button
 - some kind of help with errors.
-- allow user to choose different dependent variables...
+- label axes
 
-- Error cleanup:
-  no ; [ ]
-  check parens are balanced
-  check that only variables are present (e.g. radius, phi, theta, etc)
 
 
 

@@ -65,7 +65,8 @@ function setupDatGui() {
     coordSystem.onChange(function(value) { updateCoordinateSystem(); } );
     var formula = gui1.add(_params, 'formula').listen();
 	gui1.add( _params, 'draw' ).name("Click to draw formula.");
-	gui1.add( _params, 'help' ).name("Click for help, tips.");
+	gui1.add(_params, 'help').name("Click for help, tips.");
+	gui1.add(_params, 'share').name("Share this formula and graph.");
 
 	var gui = new dat.GUI();
 	    
