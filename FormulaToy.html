@@ -31,13 +31,17 @@ ga('send', 'pageview');
 		<script src="guiStuff.js"></script>
 		<script src="FormulaValidation.js"></script>
 		<script src="params.js"></script>
+        <script>
+        function doneSharing() { document.getElementById('ShareDiv').style.display = 'none'; document.getElementById('modalBackground').style.display = 'none'; }
+        </script>
+
 	</head>
 	<body>
         <div id="modalBackground"></div>
         <div id='ShareDiv' style='z-index: 100; background-color: white; border: 1px; border-style: solid; border-color: black; display: none;'>
         <table >
-        <tr><th colspan='2' align="left" style="font-family: calibri;">Share your Matrix:</th><th align=right><button id='doneSharingButton' class='styled-button-blue' onclick='doneSharing()'>Done</button></th></tr>
-        <tr><td colspan='3'><input id='MatrixURL' style='font-size: 10px; width: 300px;' /></td></tr>
+        <tr><th colspan='2' align="left" style="font-family: calibri;">Share your formula:</th><th align=right><button id='doneSharingButton' class='styled-button-blue' onclick='doneSharing()'>Done</button></th></tr>
+        <tr><td colspan='3'>URL: <input id='MatrixURL' style='font-size: 10px; width: 300px;' /></td></tr>
         <tr>
         <td><a id="shareEmail" href="blah"><img id="MailPng" width=100px; src="images/mail2.png" /></a></td>
         <td><a id="shareFB" href="blah"><img id="FBPng" width=100px; src="images/FacebookFlatLarge.png" /></a></td>

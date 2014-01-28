@@ -49,7 +49,7 @@ function updateCoordinateSystem() {
     }
     if (_params.system == 'cylindrical') {
         //alert('Z is a function of radius (0 to 1) and phi (0 to 2xPI)');
-        if (updateFormula) _params.formula = 'z = radius*(Math.cos(4*phi) + Math.sin(4*phi))';
+        if (updateFormula) _params.formula = 'z = radius*(cos(4*phi) + sin(4*phi))';
     }
     draw();
 }

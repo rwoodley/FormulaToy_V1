@@ -17,7 +17,7 @@ function getCleanFormula(system, userFormula) {
 }
 function convertToJavascript(system, userFormula) {
     var possibleValues = getPossibleValuesForSystem(system);
-    var formula = userFormula.toLowerCase().replace(' ', '').replace(/math/g, 'Math');
+    var formula = userFormula.toLowerCase().replace(/ /g, '').replace(/math/g, 'Math');
     if (formula.indexOf('[') > -1 || formula.indexOf(']') > -1) {
         alert('No brackets in the formula please.');
         return null;

@@ -25,8 +25,10 @@ function init() {
     _params = new params();
     _params.initFromURL();
 
-	_renderer = new THREE.WebGLRenderer();
-	_renderer.setSize( window.innerWidth, window.innerHeight );
+    _renderer = new THREE.WebGLRenderer();
+    //_renderer = new THREE.WebGLRenderer({ preserveDrawingBuffer: true });
+    //_renderer = new THREE.CanvasRenderer();
+    _renderer.setSize(window.innerWidth, window.innerHeight);
 	_renderer.shadowMapEnabled = true;
     _renderer.sortObjects = false; // see http://stackoverflow.com/questions/15994944/transparent-objects-in-threejs
 	//_renderer.shadowMapCullFace = THREE.CullFaceBack;        
@@ -78,7 +80,7 @@ function doPlot() {
 
     var jsFormula = convertToJavascript(_params.system,_params.formula);
     if (jsFormula == null) return;
-    _params.formula = getCleanFormula(_params.system,_params.formula);
+    _params.setFormula(getCleanFormula(_params.system,_params.formula));
     var dependentVariable = getDependentVariable(_params.formula);
 
 	var prefix, postfix;
